@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --font-cinzel: 'Cinzel Decorative', serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Theme Colors */
+  --sky-deep: #0B1325;
+  --sky-twilight: #16243E;
+  --himalaya-blue: #1A365D;
+  
+  --rhododendron-red: #B83227;
+  --marigold-gold: #D98A2B;
+  --prayer-yellow: #E5B23A;
+
+  --temple-wood: #2A1F1B;
+  --sandstone: #D8C3A5;
+  --slate-stone: #4A5568;
+
+  --snow-white: #F8FAFC;
+  --fog-gray: #E2E8F0;
+  --bg-dark: #070C14;
+  --bg-card: #0F192C;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--snow-white);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070c14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a365d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b83227;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans-clean {
+  font-family: var(--font-sans);
+}
+
+/* Custom Glassmorphism Utility */
+.glass-panel {
+  background: rgba(15, 25, 44, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(216, 195, 165, 0.12);
+}
+
+.glass-panel-dark {
+  background: rgba(7, 12, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 138, 43, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(184, 50, 39, 0.25);
+}
+
+/* Text Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F8FAFC 0%, #D8C3A5 50%, #D98A2B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-crimson {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E5B23A 40%, #B83227 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-sky {
+  background: linear-gradient(135deg, #FFFFFF 0%, #90CDF4 50%, #1A365D 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Mist Animation */
+@keyframes floatMist {
+  0% { transform: translateX(-5%) translateY(0%); opacity: 0.3; }
+  50% { transform: translateX(5%) translateY(-2%); opacity: 0.6; }
+  100% { transform: translateX(-5%) translateY(0%); opacity: 0.3; }
+}
+
+.animate-mist {
+  animation: floatMist 25s ease-in-out infinite alternate;
+}
+
+/* Prayer Flag Flutter Animation */
+@keyframes flagFlutter {
+  0% { transform: rotate(0deg) skewX(0deg); }
+  25% { transform: rotate(1deg) skewX(2deg); }
+  50% { transform: rotate(-1deg) skewX(-1deg); }
+  75% { transform: rotate(1.5deg) skewX(1deg); }
+  100% { transform: rotate(0deg) skewX(0deg); }
+}
+
+.animate-flag {
+  animation: flagFlutter 4s ease-in-out infinite;
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
