@@ -86,7 +86,7 @@ export const SeasonSelector: React.FC = () => {
                 onClick={() => setSelectedActivity(act.id)}
                 className={`px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
                   isSelected
-                    ? 'bg-gradient-to-r from-[#B83227] to-[#D98A2B] text-white shadow-xl scale-105'
+                    ? 'bg-linear-to-r from-[#B83227] to-[#D98A2B] text-white shadow-xl scale-105'
                     : 'bg-[#070C14] text-slate-400 border border-slate-800 hover:border-slate-600 hover:text-white'
                 }`}
               >
