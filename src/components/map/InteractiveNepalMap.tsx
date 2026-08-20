@@ -1,24 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { DESTINATIONS } from '../../data/destinations';
 import type { Destination } from '../../types';
 import { MapPin, Navigation } from 'lucide-react';
 
+// Simplified Nepal border outline as [lng, lat] pairs (clockwise from western tip).
+// Derived from public-domain boundary data, reduced to ~35 vertices.
+const NEPAL_BORDER: [number, number][] = [
+  [80.06, 29.55], [80.40, 29.90], [80.90, 30.20], [81.30, 30.35],
+  [81.90, 30.40], [82.40, 30.10], [82.90, 29.70], [83.40, 29.40],
+  [83.90, 29.20], [84.40, 28.90], [84.90, 28.70], [85.40, 28.60],
+  [85.90, 28.40], [86.40, 28.10], [86.90, 27.90], [87.40, 27.70],
+  [87.90, 27.40], [88.20, 27.10], [88.15, 26.80], [88.00, 26.55],
+  [87.60, 26.40], [87.10, 26.50], [86.50, 26.60], [85.90, 26.70],
+  [85.30, 26.80], [84.70, 27.00], [84.10, 27.20], [83.50, 27.40],
+  [82.90, 27.60], [82.30, 27.80], [81.70, 28.10], [81.10, 28.40],
+  [80.60, 28.80], [80.20, 29.20],
+];
+
+// Nepal bounding box used for projection
+const LNG_MIN = 80.0, LNG_MAX = 88.2, LAT_MIN = 26.3, LAT_MAX = 30.5;
+
+// Project real lat/lng into percentage coordinates within the map container
+const project = (lat: number, lng: number) => ({
+  x: ((lng - LNG_MIN) / (LNG_MAX - LNG_MIN)) * 100,
+  y: ((LAT_MAX - lat) / (LAT_MAX - LAT_MIN)) * 100,
+});
+
 export const InteractiveNepalMap: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<Destination>(DESTINATIONS[0]);
 
-  // Coordinates normalized for custom vector map layout SVG
-  const mapMarkers = [
-    { id: 'kathmandu', x: 55, y: 55, name: 'Kathmandu' },
-    { id: 'pokhara', x: 42, y: 48, name: 'Pokhara' },
-    { id: 'everest-region', x: 72, y: 44, name: 'Everest (Khumbu)' },
-    { id: 'annapurna-region', x: 38, y: 40, name: 'Annapurna' },
-    { id: 'mustang', x: 34, y: 30, name: 'Upper Mustang' },
-    { id: 'chitwan', x: 48, y: 65, name: 'Chitwan' },
-    { id: 'lumbini', x: 32, y: 68, name: 'Lumbini' },
-    { id: 'rara-lake', x: 18, y: 28, name: 'Rara Lake' },
-    { id: 'ilam', x: 88, y: 62, name: 'Ilam' },
-    { id: 'bandipur', x: 46, y: 52, name: 'Bandipur' },
-  ];
+  // Build the SVG outline path from real border coordinates
+  const outlinePath = useMemo(() => {
+    const pts = NEPAL_BORDER.map(([lng, lat]) => {
+      const { x, y } = project(lat, lng);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    });
+    return `M ${pts.join(' L ')} Z`;
+  }, []);
+
+  // Pin positions derived from actual destination coordinates
+  const mapMarkers = useMemo(() => {
+    return DESTINATIONS.map((dest) => {
+      const { x, y } = project(dest.coordinates.lat, dest.coordinates.lng);
+      return { id: dest.id, x, y, name: dest.name };
+    });
+  }, []);
 
   return (
     <section id="map" className="relative w-full py-28 bg-[#070C14] border-b border-slate-800/80">
@@ -53,18 +79,18 @@ export const InteractiveNepalMap: React.FC = () => {
               <span className="text-[11px] text-slate-500 font-mono">28.3949° N, 84.1240° E</span>
             </div>
 
-            {/* Interactive Custom SVG Nepal Outline Map Container */}
+            {/* Interactive SVG Nepal Outline Map Container */}
             <div className="relative w-full h-[320px] my-auto flex items-center justify-center">
               
-              {/* Abstract Map Background Silhouette SVG */}
-              <svg viewBox="0 0 100 60" className="w-full h-full text-slate-800/40 fill-current filter drop-shadow-lg">
-                <path d="M 5,25 Q 15,10 35,15 Q 55,8 75,20 Q 95,25 95,45 Q 85,58 65,55 Q 45,58 25,52 Q 10,50 5,25 Z" />
+              {/* Nepal country outline projected from real border coordinates */}
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" aria-hidden="true">
+                <path
+                  d={outlinePath}
+                  className="fill-[#1A365D]/25 stroke-[#D8C3A5]/40"
+                  strokeWidth="0.4"
+                  strokeLinejoin="round"
+                />
               </svg>
-
-              {/* Topographical Himalayan Ridge Overlay Lines */}
-              <div className="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
-                <div className="w-full h-full border-t-2 border-dashed border-[#D98A2B]"></div>
-              </div>
 
               {/* Map Location Pins */}
               {mapMarkers.map((marker) => {
@@ -81,11 +107,6 @@ export const InteractiveNepalMap: React.FC = () => {
                     aria-pressed={isSelected}
                     className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group p-1 -m-1"
                   >
-                    {/* Ping Ring */}
-                    {isSelected && (
-                      <span className="absolute -inset-2 rounded-full bg-[#B83227] opacity-75 animate-ping"></span>
-                    )}
-
                     {/* Pin Button */}
                     <div className={`relative p-2.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                       isSelected
