@@ -31,7 +31,7 @@ export const DestinationGallery: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D98A2B]">
             <Compass className="w-4 h-4 text-[#D98A2B]" />
-            <span>Section 05 • Iconic Destinations</span>
+            <span>Iconic Destinations</span>
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">

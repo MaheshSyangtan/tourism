@@ -14,7 +14,7 @@ export const WildlifeSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
             <Trees className="w-4 h-4 text-emerald-400" />
-            <span>Section 11 • Wild Sanctuaries</span>
+            <span>Wild Sanctuaries</span>
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">

@@ -26,7 +26,7 @@ export const HistoricalTimeline: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D98A2B]">
             <span className="w-8 h-[2px] bg-[#D98A2B]"></span>
-            <span>Section 03 • Chronicles of Nepal</span>
+            <span>Chronicles of Nepal</span>
             <span className="w-8 h-[2px] bg-[#D98A2B]"></span>
           </div>
 

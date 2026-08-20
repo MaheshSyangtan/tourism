@@ -19,7 +19,7 @@ export const UnescoSection: React.FC = () => {
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D98A2B]">
               <Award className="w-4 h-4 text-[#D98A2B]" />
-              <span>Section 04 • Living Heritage</span>
+              <span>Living Heritage</span>
             </div>
 
             <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">

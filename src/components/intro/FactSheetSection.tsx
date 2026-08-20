@@ -15,7 +15,7 @@ export const FactSheetSection: React.FC = () => {
           <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D98A2B]">
               <span className="w-8 h-[2px] bg-[#D98A2B]"></span>
-              <span>Section 02 • Introduction</span>
+              <span>Introduction</span>
             </div>
 
             <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
