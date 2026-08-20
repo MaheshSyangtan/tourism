@@ -65,7 +65,7 @@ export const UnescoSection: React.FC = () => {
                   src={site.image}
                   alt={site.name}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-transparent to-transparent"></div>
                 

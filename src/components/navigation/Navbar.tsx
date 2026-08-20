@@ -115,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
           >
             {isAudioPlaying ? (
               <>
-                <Volume2 className="w-4 h-4 text-[#D98A2B] animate-pulse" />
+                <Volume2 className="w-4 h-4 text-[#D98A2B]" />
                 <span className="text-[11px] text-[#D8C3A5] hidden md:inline pr-1">Atmosphere</span>
               </>
             ) : (

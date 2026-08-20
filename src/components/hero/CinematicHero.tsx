@@ -21,11 +21,6 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
         <div className="absolute inset-0 bg-radial from-transparent via-[#070C14]/30 to-[#070C14]/90"></div>
       </div>
 
-      {/* Floating Animated Himalayan Mist Layer */}
-      <div className="absolute inset-0 z-1 pointer-events-none opacity-40 animate-mist">
-        <div className="w-[150%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent blur-3xl transform -rotate-6"></div>
-      </div>
-
       {/* Prayer Flags Banner Overlay at top */}
       <div className="absolute top-20 right-0 left-0 z-10 pointer-events-none overflow-hidden flex justify-center opacity-85">
         <div className="flex gap-1 animate-flag transform -rotate-1 origin-top-left">
@@ -50,7 +45,6 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-[#D8C3A5]/30 backdrop-blur-md mb-8 text-xs font-semibold uppercase tracking-widest text-[#D8C3A5] shadow-lg">
           <Mountain className="w-3.5 h-3.5 text-[#D98A2B]" />
           <span>8,848.86m Above Sea Level</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#B83227] animate-ping"></span>
         </div>
 
         {/* Large Editorial Headline */}
@@ -69,7 +63,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
             href="#intro"
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#B83227] hover:bg-[#a02a20] text-white font-bold text-xs uppercase tracking-widest shadow-xl shadow-[#B83227]/30 hover:shadow-[#B83227]/50 transition-all flex items-center justify-center gap-3 group"
           >
-            <Compass className="w-4 h-4 text-[#D98A2B] group-hover:rotate-180 transition-transform duration-700" />
+            <Compass className="w-4 h-4 text-[#D98A2B]" />
             <span>Explore Nepal</span>
           </a>
 
@@ -110,7 +104,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
       >
         <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll to Discover</span>
         <div className="w-5 h-8 rounded-full border-2 border-slate-600 group-hover:border-[#D98A2B] flex justify-center p-1">
-          <div className="w-1 h-2 bg-[#D98A2B] rounded-full animate-bounce"></div>
+          <div className="w-1 h-2 bg-[#D98A2B] rounded-full"></div>
         </div>
       </a>
     </section>

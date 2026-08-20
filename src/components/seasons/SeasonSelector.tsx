@@ -127,7 +127,7 @@ export const SeasonSelector: React.FC = () => {
                     </div>
 
                     {isRecommended && (
-                      <span className="px-3 py-1 rounded-full bg-[#B83227] text-white text-[10px] font-extrabold uppercase tracking-widest animate-pulse">
+                      <span className="px-3 py-1 rounded-full bg-[#B83227] text-white text-[10px] font-extrabold uppercase tracking-widest">
                         RECOMMENDED
                       </span>
                     )}

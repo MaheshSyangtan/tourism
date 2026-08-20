@@ -80,7 +80,7 @@ export const FactSheetSection: React.FC = () => {
                   src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop"
                   alt="Kathmandu Durbar Square Temple Architecture"
                   loading="lazy"
-                  className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[450px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#070C14]/80 backdrop-blur-md border border-slate-700/60">

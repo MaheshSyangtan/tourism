@@ -46,7 +46,7 @@ export const FoodSection: React.FC = () => {
                     src={dish.image}
                     alt={dish.name}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-[#0F192C]/60 to-transparent"></div>
                 </div>
