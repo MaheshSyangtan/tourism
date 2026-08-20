@@ -97,9 +97,9 @@ export const DESTINATIONS: Destination[] = [
       'Blooming crimson rhododendron forests in April'
     ],
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)'],
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200'
     ],
     coordinates: { lat: 28.5355, lng: 83.8780 },
     unesco: false,
@@ -197,7 +197,7 @@ export const DESTINATIONS: Destination[] = [
       'Experiencing authentic Western Nepalese mountain villages'
     ],
     bestSeason: ['Spring (Apr–May)', 'Autumn (Sep–Nov)'],
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop',
     gallery: [],
     coordinates: { lat: 29.5375, lng: 82.0833 },
     unesco: false,
@@ -243,7 +243,7 @@ export const DESTINATIONS: Destination[] = [
       'Authentic Newari hospitality and traditional dining'
     ],
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)', 'Winter (Dec–Feb)'],
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1600&auto=format&fit=crop',
     gallery: [],
     coordinates: { lat: 27.9392, lng: 84.4172 },
     unesco: false,

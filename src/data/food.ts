@@ -11,7 +11,7 @@ export const FOOD_DISHES: FoodDish[] = [
     flavorProfile: 'Savory, comforting, earthy, spiced with cumin, coriander, garlic & Jimbu herb.',
     culturalContext: 'Eaten twice daily by nearly every Nepalese household. Trekkers famously swear by "Dal Bhat Power 24 Hour!" due to sustained complex carb energy.',
     description: 'The undisputed national dish of Nepal — a nourishing, balanced thali plate featuring steaming rice, aromatic lentil soup, spiced organic vegetables, crisp papad, and tangy homemade pickles.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200'
   },
   {
     id: 'momo',

@@ -15,7 +15,7 @@ export const CULTURAL_COMMUNITIES: CulturalCommunity[] = [
     traditionalCrafts: ['Metal sculpture casting', 'Woodcarving', 'Pottery (Bhaktapur)', 'Paubha paintings'],
     architectureStyle: 'Brick multi-tiered pagodas with carved wooden struts and copper roofs.',
     description: 'The indigenous inhabitants of Kathmandu Valley, celebrated for constructing Nepal’s royal Durbar squares, bronze statues, unique stone fountains, and festive rituals.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200'
   },
   {
     id: 'sherpa',

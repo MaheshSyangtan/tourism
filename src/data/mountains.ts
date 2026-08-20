@@ -28,7 +28,7 @@ export const MOUNTAINS: Mountain[] = [
     firstAscent: 'May 25, 1955',
     firstClimbers: 'Joe Brown & George Band',
     description: 'The world’s 3rd highest peak, consisting of five massive summits located on the eastern border of Nepal and Sikkim.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200',
     difficulty: 'Extreme'
   },
   {
@@ -118,7 +118,7 @@ export const MOUNTAINS: Mountain[] = [
     firstAscent: 'June 3, 1950',
     firstClimbers: 'Maurice Herzog & Louis Lachenal',
     description: 'The very first 8,000-meter peak ever summited by humans in 1950. Renowned for its sheer south face and immense glaciers.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200',
     difficulty: 'Extreme'
   },
   {

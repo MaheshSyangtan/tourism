@@ -17,7 +17,7 @@ export const HISTORICAL_TIMELINE: HistoricalEvent[] = [
     significance: 'Laid the cultural, agricultural, and commercial bedrock for the Kathmandu Valley.',
     keyFigures: ['King Yalamber', 'Emperor Ashoka'],
     location: 'Kathmandu Valley & Eastern Hills',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200',
     iconName: 'Crown'
   },
   {
@@ -74,7 +74,7 @@ export const HISTORICAL_TIMELINE: HistoricalEvent[] = [
     significance: 'Created the unified nation-state of Nepal, safeguarding independence during colonial rule in Asia.',
     keyFigures: ['King Prithvi Narayan Shah', 'Bhakti Thapa', 'Amar Singh Thapa'],
     location: 'Gorkha Durbar & Basantpur Tower',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200',
     iconName: 'Shield'
   },
   {

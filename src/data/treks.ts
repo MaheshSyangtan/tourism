@@ -43,7 +43,7 @@ export const TREK_ROUTES: TrekRoute[] = [
     ],
     description: 'A classic trek circling the Annapurna massif, offering dramatic landscape shifts from lush paddy fields and apple orchards to desert canyons and snow passes.',
     altitudePreparation: 'Acclimatization overnight rest at Manang village (3,540m) before ascending to Thorong Phedi.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200'
   },
   {
     id: 'abc',

@@ -19,7 +19,7 @@ export const WILDLIFE_SPECIES: WildlifeSpecies[] = [
     habitat: 'Subtropical floodplain tall grasslands & sal forests',
     parksFoundIn: ['Bardia National Park', 'Chitwan National Park', 'Banke National Park'],
     description: 'Nepal nearly tripled its tiger population between 2010 and 2022, counting over 355 wild Bengal Tigers roaming protected conservation corridors.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200'
   },
   {
     id: 'snow-leopard',

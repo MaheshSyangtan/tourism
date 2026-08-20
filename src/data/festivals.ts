@@ -16,7 +16,7 @@ export const FESTIVALS: Festival[] = [
     ],
     regionContext: 'Celebrated nationwide across all villages and cities in Nepal.',
     description: 'Nepal’s longest and most joyful festival. Families travel across mountains to gather, receive elder blessings, feast on mountain goat curry, and fly kites in blue autumn skies.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200',
     colorAccent: '#B83227'
   },
   {
@@ -69,7 +69,7 @@ export const FESTIVALS: Festival[] = [
     ],
     regionContext: 'Hills on Day 1, Terai lowlands on Day 2.',
     description: 'An exuberant nation-wide street party where strangers become friends under clouds of vibrant colored powders, music, and laughter.',
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200',
     colorAccent: '#B83227'
   },
   {
