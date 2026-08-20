@@ -18,7 +18,7 @@ export const WildlifeSection: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            WILDLIFE & <span className="text-gradient-gold">ECOLOGICAL DIVERSITY</span>
+            WILDLIFE & <span className="text-[#D98A2B]">ECOLOGICAL DIVERSITY</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

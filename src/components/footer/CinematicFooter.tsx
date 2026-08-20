@@ -29,7 +29,7 @@ export const CinematicFooter: React.FC<CinematicFooterProps> = ({ onOpenPlanner 
           <div className="relative z-10 max-w-3xl space-y-8">
             <h2 className="font-cinzel text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
               YOUR JOURNEY <br />
-              <span className="text-gradient-gold">STARTS HERE.</span>
+              <span className="text-[#D98A2B]">STARTS HERE.</span>
             </h2>
 
             <p className="font-editorial italic text-2xl text-slate-200 font-light">

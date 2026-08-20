@@ -55,7 +55,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
 
         {/* Large Editorial Headline */}
         <h1 className="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-tight mb-6 text-shadow-xl">
-          DISCOVER <span className="text-gradient-gold">NEPAL</span>
+          DISCOVER <span className="text-[#D98A2B]">NEPAL</span>
         </h1>
 
         {/* Editorial Subheading */}

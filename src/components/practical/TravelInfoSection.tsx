@@ -26,7 +26,7 @@ export const TravelInfoSection: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-              PRACTICAL <span className="text-gradient-gold">TRAVEL INFORMATION</span>
+              PRACTICAL <span className="text-[#D98A2B]">TRAVEL INFORMATION</span>
             </h2>
 
             <p className="font-editorial italic text-xl text-slate-300">
@@ -77,7 +77,7 @@ export const TravelInfoSection: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              TRAVEL WITH <span className="text-gradient-crimson">RESPECT</span>
+              TRAVEL WITH <span className="text-[#D98A2B]">RESPECT</span>
             </h2>
 
             <p className="font-editorial italic text-xl text-[#D8C3A5]">

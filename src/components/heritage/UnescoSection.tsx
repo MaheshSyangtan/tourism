@@ -23,7 +23,7 @@ export const UnescoSection: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-              UNESCO <span className="text-gradient-gold">WORLD HERITAGE</span>
+              UNESCO <span className="text-[#D98A2B]">WORLD HERITAGE</span>
             </h2>
 
             <p className="font-editorial italic text-xl text-slate-300">

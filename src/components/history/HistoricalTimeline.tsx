@@ -31,7 +31,7 @@ export const HistoricalTimeline: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            A JOURNEY <span className="text-gradient-gold">THROUGH TIME</span>
+            A JOURNEY <span className="text-[#D98A2B]">THROUGH TIME</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

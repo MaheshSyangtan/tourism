@@ -18,7 +18,7 @@ export const MountainViewer: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            THE EIGHT-THOUSANDERS <span className="text-gradient-sky">& SACRED PEAKS</span>
+            THE EIGHT-THOUSANDERS <span className="text-[#D98A2B]">& SACRED PEAKS</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

@@ -18,7 +18,7 @@ export const CultureSection: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            CULTURE, ARTS & <span className="text-gradient-crimson">HERITAGE</span>
+            CULTURE, ARTS & <span className="text-[#D98A2B]">HERITAGE</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

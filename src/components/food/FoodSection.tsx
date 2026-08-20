@@ -18,7 +18,7 @@ export const FoodSection: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            NEPALESE FLAVORS & <span className="text-gradient-gold">CUISINE</span>
+            NEPALESE FLAVORS & <span className="text-[#D98A2B]">CUISINE</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

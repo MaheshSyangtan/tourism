@@ -32,7 +32,7 @@ export const InteractiveNepalMap: React.FC = () => {
           </div>
 
           <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            INTERACTIVE MAP OF <span className="text-gradient-gold">NEPAL</span>
+            INTERACTIVE MAP OF <span className="text-[#D98A2B]">NEPAL</span>
           </h2>
 
           <p className="font-editorial italic text-xl text-slate-300">

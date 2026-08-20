@@ -19,7 +19,7 @@ export const FactSheetSection: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              A SMALL COUNTRY WITH A <span className="text-gradient-crimson">HUGE STORY.</span>
+              A SMALL COUNTRY WITH A <span className="text-[#D98A2B]">HUGE STORY.</span>
             </h2>
 
             <p className="font-editorial italic text-2xl text-[#D8C3A5] font-light leading-relaxed">
