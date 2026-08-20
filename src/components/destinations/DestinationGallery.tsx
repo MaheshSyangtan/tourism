@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { DESTINATIONS } from '../../data/destinations';
 import type { Destination } from '../../types';
 import { Compass, ArrowRight } from 'lucide-react';
+import { useModalBehavior } from '../../hooks/useModalBehavior';
 
 export const DestinationGallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
+
+  useModalBehavior(!!selectedDestination, () => setSelectedDestination(null));
 
   const categories = [
     { id: 'all', label: 'All Destinations' },
@@ -63,13 +66,23 @@ export const DestinationGallery: React.FC = () => {
             <div
               key={dest.id}
               onClick={() => setSelectedDestination(dest)}
-              className="group relative rounded-3xl overflow-hidden bg-[#070C14] border border-[#D8C3A5]/15 hover:border-[#D98A2B]/60 transition-all duration-700 cursor-pointer flex flex-col justify-between h-[480px] shadow-xl hover:shadow-2xl hover:shadow-[#B83227]/20"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedDestination(dest);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`Explore ${dest.name}`}
+              className="group relative rounded-3xl overflow-hidden bg-[#070C14] border border-[#D8C3A5]/15 hover:border-[#D98A2B]/60 transition-all duration-700 cursor-pointer flex flex-col justify-between h-[480px] shadow-xl hover:shadow-2xl hover:shadow-[#B83227]/20 focus-visible:outline-2 focus-visible:outline-[#D98A2B]"
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
                 <img
                   src={dest.image}
                   alt={dest.name}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/50 to-black/30 group-hover:via-[#070C14]/70 transition-all duration-500"></div>
@@ -113,9 +126,18 @@ export const DestinationGallery: React.FC = () => {
 
       {/* Destination Modal Detail */}
       {selectedDestination && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-4xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div className="relative h-80">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
+          onClick={() => setSelectedDestination(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedDestination.name}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto animate-scaleIn"
+          >
+            <div className="relative h-64 sm:h-80">
               <img
                 src={selectedDestination.image}
                 alt={selectedDestination.name}
@@ -125,6 +147,7 @@ export const DestinationGallery: React.FC = () => {
               
               <button
                 onClick={() => setSelectedDestination(null)}
+                aria-label="Close destination details"
                 className="absolute top-4 right-4 px-4 py-2 rounded-full bg-[#070C14]/80 text-xs font-bold uppercase tracking-wider text-white hover:bg-[#B83227] transition-colors"
               >
                 Close ✕
@@ -140,8 +163,8 @@ export const DestinationGallery: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-8 space-y-6">
-              <p className="font-editorial italic text-2xl text-[#D8C3A5]">
+            <div className="p-6 sm:p-8 space-y-6">
+              <p className="font-editorial italic text-xl sm:text-2xl text-[#D8C3A5]">
                 "{selectedDestination.tagline}"
               </p>
 
@@ -163,7 +186,7 @@ export const DestinationGallery: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-slate-800 flex items-center justify-between">
+              <div className="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
                 <div className="text-xs text-slate-400">
                   <span className="font-bold text-white">Coordinates: </span>
                   {selectedDestination.coordinates.lat}° N, {selectedDestination.coordinates.lng}° E

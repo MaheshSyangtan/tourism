@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { DESTINATIONS } from '../../data/destinations';
 import { Award, Landmark, X, CheckCircle2 } from 'lucide-react';
 import type { Destination } from '../../types';
+import { useModalBehavior } from '../../hooks/useModalBehavior';
 
 export const UnescoSection: React.FC = () => {
   const unescoSites = DESTINATIONS.filter((d) => d.unesco || d.category === 'cultural' || d.category === 'spiritual');
   const [selectedSite, setSelectedSite] = useState<Destination | null>(null);
+
+  useModalBehavior(!!selectedSite, () => setSelectedSite(null));
 
   return (
     <section id="heritage" className="relative w-full py-28 bg-[#070C14] border-b border-slate-800/80">
@@ -45,13 +48,23 @@ export const UnescoSection: React.FC = () => {
             <div
               key={site.id}
               onClick={() => setSelectedSite(site)}
-              className="group relative rounded-2xl overflow-hidden bg-[#0F192C] border border-slate-800 hover:border-[#D98A2B]/50 transition-all duration-500 cursor-pointer flex flex-col justify-between"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedSite(site);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`View details for ${site.name}`}
+              className="group relative rounded-2xl overflow-hidden bg-[#0F192C] border border-slate-800 hover:border-[#D98A2B]/50 transition-all duration-500 cursor-pointer flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-[#D98A2B]"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={site.image}
                   alt={site.name}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-transparent to-transparent"></div>
@@ -93,8 +106,17 @@ export const UnescoSection: React.FC = () => {
 
       {/* Detail Modal Pop-up */}
       {selectedSite && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-3xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
+          onClick={() => setSelectedSite(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedSite.name}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-3xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto animate-scaleIn"
+          >
             {/* Modal Header Image */}
             <div className="relative h-72">
               <img
@@ -106,6 +128,7 @@ export const UnescoSection: React.FC = () => {
               
               <button
                 onClick={() => setSelectedSite(null)}
+                aria-label="Close site details"
                 className="absolute top-4 right-4 p-2 rounded-full bg-[#070C14]/80 text-white hover:bg-[#B83227] transition-colors"
               >
                 <X className="w-5 h-5" />

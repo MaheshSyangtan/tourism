@@ -29,15 +29,16 @@ export const MountainViewer: React.FC = () => {
         {/* Mountain Explorer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column — Mountain Selector List */}
-          <div className="lg:col-span-5 space-y-3 max-h-[600px] overflow-y-auto pr-2">
+          {/* Left Column — Mountain Selector List (horizontal snap scroller on mobile) */}
+          <div className="lg:col-span-5">
+            <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto lg:overflow-x-visible lg:max-h-[600px] lg:pr-2 pb-2 lg:pb-0 no-scrollbar snap-x snap-mandatory lg:snap-none -mx-4 px-4 lg:mx-0 lg:px-0">
             {MOUNTAINS.map((m) => {
               const isSelected = m.id === selectedMountain.id;
               return (
                 <button
                   key={m.id}
                   onClick={() => setSelectedMountain(m)}
-                  className={`w-full p-4 rounded-2xl text-left transition-all duration-300 flex items-center justify-between group ${
+                  className={`w-64 lg:w-full shrink-0 lg:shrink snap-start p-4 rounded-2xl text-left transition-all duration-300 flex items-center justify-between group ${
                     isSelected
                       ? 'bg-[#0F192C] border-2 border-[#D98A2B] shadow-xl'
                       : 'bg-[#070C14]/80 border border-slate-800 hover:border-slate-600 hover:bg-[#0F192C]/50'
@@ -66,6 +67,7 @@ export const MountainViewer: React.FC = () => {
                 </button>
               );
             })}
+            </div>
           </div>
 
           {/* Right Column — Active Mountain Detail Showcase Card */}
@@ -77,6 +79,7 @@ export const MountainViewer: React.FC = () => {
                 <img
                   src={selectedMountain.image}
                   alt={selectedMountain.name}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-transparent to-transparent"></div>

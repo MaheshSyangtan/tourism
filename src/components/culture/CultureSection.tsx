@@ -116,6 +116,7 @@ export const CultureSection: React.FC = () => {
               <img
                 src={activeCommunity.image}
                 alt={activeCommunity.name}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-transparent to-transparent"></div>

@@ -72,11 +72,14 @@ export const InteractiveNepalMap: React.FC = () => {
                 const isSelected = selectedLocation.id === marker.id;
 
                 return (
-                  <div
+                  <button
                     key={marker.id}
+                    type="button"
                     style={{ left: `${marker.x}%`, top: `${marker.y}%` }}
                     onClick={() => setSelectedLocation(destData)}
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group"
+                    aria-label={`Select ${marker.name} on map`}
+                    aria-pressed={isSelected}
+                    className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group p-1 -m-1"
                   >
                     {/* Ping Ring */}
                     {isSelected && (
@@ -84,7 +87,7 @@ export const InteractiveNepalMap: React.FC = () => {
                     )}
 
                     {/* Pin Button */}
-                    <div className={`relative p-2 rounded-full transition-all duration-300 flex items-center justify-center ${
+                    <div className={`relative p-2.5 rounded-full transition-all duration-300 flex items-center justify-center ${
                       isSelected
                         ? 'bg-[#B83227] text-white scale-125 shadow-lg shadow-[#B83227]/50'
                         : 'bg-[#070C14] text-[#D98A2B] border border-slate-700 hover:scale-110 hover:border-[#D98A2B]'
@@ -100,7 +103,7 @@ export const InteractiveNepalMap: React.FC = () => {
                     }`}>
                       {marker.name}
                     </div>
-                  </div>
+                  </button>
                 );
               })}
 
@@ -120,6 +123,7 @@ export const InteractiveNepalMap: React.FC = () => {
                 <img
                   src={selectedLocation.image}
                   alt={selectedLocation.name}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>

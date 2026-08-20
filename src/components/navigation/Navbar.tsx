@@ -15,9 +15,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll + close drawer on Escape when mobile menu is open
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, [mobileMenuOpen]);
 
   const toggleAudio = () => {
     if (!audioRef) {
@@ -92,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
         </nav>
 
         {/* Actions (Audio Toggle + Trip Planner CTA) */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={toggleAudio}
             title={isAudioPlaying ? 'Mute ambient sound' : 'Play ambient wind sound'}
@@ -127,6 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
         <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={toggleAudio}
+            aria-label={isAudioPlaying ? 'Mute ambient sound' : 'Play ambient sound'}
             className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300"
           >
             {isAudioPlaying ? <Volume2 className="w-4 h-4 text-[#D98A2B]" /> : <VolumeX className="w-4 h-4" />}
@@ -135,6 +151,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-200"
             aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
           >
             {mobileMenuOpen ? <X className="w-6 h-6 text-[#B83227]" /> : <Menu className="w-6 h-6 text-white" />}
           </button>
@@ -143,19 +161,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#070C14]/95 backdrop-blur-xl border-b border-[#D8C3A5]/20 px-6 py-6 transition-all animate-fadeIn">
-          <nav className="flex flex-col gap-4">
+        <div
+          id="mobile-nav-drawer"
+          className="lg:hidden bg-[#070C14]/95 backdrop-blur-xl border-b border-[#D8C3A5]/20 px-6 py-6 animate-slideDown max-h-[calc(100dvh-64px)] overflow-y-auto safe-x"
+        >
+          <nav className="grid grid-cols-2 gap-x-4 gap-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-[#D98A2B] py-2 border-b border-slate-800/60 flex items-center justify-between"
+                className="text-sm font-semibold uppercase tracking-widest text-slate-200 hover:text-[#D98A2B] py-3 border-b border-slate-800/60 flex items-center justify-between"
               >
                 <span>{link.label}</span>
                 <span className="text-xs text-[#D8C3A5]/50">→</span>
               </a>
             ))}
+          </nav>
             <div className="pt-4">
               <button
                 onClick={() => {
@@ -168,7 +190,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
                 Build Custom Itinerary
               </button>
             </div>
-          </nav>
         </div>
       )}
     </header>

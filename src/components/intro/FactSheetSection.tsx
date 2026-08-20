@@ -79,6 +79,7 @@ export const FactSheetSection: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop"
                   alt="Kathmandu Durbar Square Temple Architecture"
+                  loading="lazy"
                   className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>
@@ -94,6 +95,7 @@ export const FactSheetSection: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=600&auto=format&fit=crop"
                   alt="Pokhara Phewa Lake reflection"
+                  loading="lazy"
                   className="w-full h-36 object-cover"
                 />
                 <div className="p-2.5 bg-[#070C14] text-[11px] font-semibold text-slate-200 text-center">

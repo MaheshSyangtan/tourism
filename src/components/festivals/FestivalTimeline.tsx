@@ -34,7 +34,7 @@ export const FestivalTimeline: React.FC = () => {
               <button
                 key={fest.id}
                 onClick={() => setSelectedFestival(fest)}
-                className={`p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between h-32 relative overflow-hidden group ${
+                className={`p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between h-32 relative overflow-hidden group last:col-span-2 sm:last:col-span-1 ${
                   isSelected
                     ? 'bg-[#070C14] border-2 border-[#D98A2B] shadow-xl scale-102'
                     : 'bg-[#070C14]/60 border border-slate-800 hover:border-slate-600'
@@ -67,6 +67,7 @@ export const FestivalTimeline: React.FC = () => {
               <img
                 src={selectedFestival.image}
                 alt={selectedFestival.name}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>

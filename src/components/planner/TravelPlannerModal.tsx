@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Sparkles } from 'lucide-react';
 import type { TravelItineraryResult } from '../../types';
+import { useModalBehavior } from '../../hooks/useModalBehavior';
 
 interface TravelPlannerModalProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ export const TravelPlannerModal: React.FC<TravelPlannerModalProps> = ({ isOpen, 
   const [budget, setBudget] = useState<string>('Comfort');
 
   const [generatedItinerary, setGeneratedItinerary] = useState<TravelItineraryResult | null>(null);
+
+  useModalBehavior(isOpen, onClose);
 
   if (!isOpen) return null;
 
@@ -89,24 +92,34 @@ export const TravelPlannerModal: React.FC<TravelPlannerModalProps> = ({ isOpen, 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-4xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[92vh] flex flex-col">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
+      onClick={onClose}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Interactive Nepal Travel Planner"
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl rounded-3xl bg-[#070C14] border border-[#D8C3A5]/30 overflow-hidden shadow-2xl max-h-[92vh] flex flex-col animate-scaleIn"
+      >
         
         {/* Modal Top Bar */}
-        <div className="p-6 border-b border-slate-800 flex items-center justify-between bg-[#0F192C]">
+        <div className="p-4 sm:p-6 border-b border-slate-800 flex items-center justify-between bg-[#0F192C]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#B83227] to-[#D98A2B] flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#B83227] to-[#D98A2B] flex items-center justify-center text-white font-bold shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-cinzel text-xl font-bold text-white">Interactive Nepal Travel Planner</h3>
+              <h3 className="font-cinzel text-base sm:text-xl font-bold text-white">Interactive Nepal Travel Planner</h3>
               <p className="text-xs text-slate-400">Build your customized suggested Himalayan itinerary</p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-slate-900 text-slate-400 hover:text-white hover:bg-[#B83227] transition-colors"
+            aria-label="Close travel planner"
+            className="p-2 rounded-full bg-slate-900 text-slate-400 hover:text-white hover:bg-[#B83227] transition-colors shrink-0"
           >
             <X className="w-5 h-5" />
           </button>

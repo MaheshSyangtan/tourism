@@ -20,6 +20,7 @@ export const CinematicFooter: React.FC<CinematicFooterProps> = ({ onOpenPlanner 
           <img
             src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1600&auto=format&fit=crop"
             alt="Annapurna Range Reflection"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/70 to-[#070C14]/50"></div>

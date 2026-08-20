@@ -84,6 +84,7 @@ export const HistoricalTimeline: React.FC = () => {
               <img
                 src={activeEvent.image}
                 alt={activeEvent.title}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#070C14]"></div>

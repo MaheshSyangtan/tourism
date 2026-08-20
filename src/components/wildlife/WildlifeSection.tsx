@@ -27,14 +27,14 @@ export const WildlifeSection: React.FC = () => {
         </div>
 
         {/* Species Selector Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-12">
           {WILDLIFE_SPECIES.map((sp) => {
             const isSelected = sp.id === selectedSpecies.id;
             return (
               <button
                 key={sp.id}
                 onClick={() => setSelectedSpecies(sp)}
-                className={`p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between h-36 relative overflow-hidden group ${
+                className={`p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between h-36 relative overflow-hidden group last:col-span-2 sm:last:col-span-1 ${
                   isSelected
                     ? 'bg-[#070C14] border-2 border-emerald-500 shadow-xl scale-102'
                     : 'bg-[#070C14]/60 border border-slate-800 hover:border-slate-600'
@@ -65,6 +65,7 @@ export const WildlifeSection: React.FC = () => {
               <img
                 src={selectedSpecies.image}
                 alt={selectedSpecies.name}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>

@@ -7,12 +7,13 @@ interface CinematicHeroProps {
 
 export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) => {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#070C14] pt-20">
+    <section className="relative w-full min-h-svh flex items-center justify-center overflow-hidden bg-[#070C14] pt-24 pb-20">
       {/* Background Image with Layered Parallax Feel */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2000&auto=format&fit=crop"
           alt="Everest Himalayan Peak Sunrise"
+          fetchPriority="high"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
         />
         {/* Dark Editorial Vignette & Gradient Overlays */}
@@ -31,13 +32,13 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
           {['bg-blue-600', 'bg-slate-100', 'bg-red-600', 'bg-amber-400', 'bg-emerald-600'].map((color, idx) => (
             <div
               key={idx}
-              className={`w-8 h-10 ${color} opacity-90 shadow-md shadow-black/40 rounded-b-sm border-t border-amber-900/30 transform origin-top hover:scale-105 transition-transform`}
+              className={`w-6 h-8 sm:w-8 sm:h-10 ${color} opacity-90 shadow-md shadow-black/40 rounded-b-sm border-t border-amber-900/30 transform origin-top hover:scale-105 transition-transform`}
             ></div>
           ))}
           {['bg-blue-600', 'bg-slate-100', 'bg-red-600', 'bg-amber-400', 'bg-emerald-600'].map((color, idx) => (
             <div
               key={`flag-2-${idx}`}
-              className={`w-8 h-10 ${color} opacity-90 shadow-md shadow-black/40 rounded-b-sm border-t border-amber-900/30 transform origin-top hover:scale-105 transition-transform`}
+              className={`hidden sm:block w-8 h-10 ${color} opacity-90 shadow-md shadow-black/40 rounded-b-sm border-t border-amber-900/30 transform origin-top hover:scale-105 transition-transform`}
             ></div>
           ))}
         </div>
@@ -82,7 +83,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
         </div>
 
         {/* Quick Highlights Counter Ticker Preview */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl pt-8 border-t border-slate-800/80">
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-6 w-full max-w-4xl pt-8 border-t border-slate-800/80">
           <div className="flex flex-col items-center">
             <span className="font-cinzel text-2xl sm:text-3xl font-bold text-[#D8C3A5]">8 / 14</span>
             <span className="text-[11px] uppercase tracking-wider text-slate-400">8,000m Peaks</span>
