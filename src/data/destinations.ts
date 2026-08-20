@@ -18,10 +18,10 @@ export const DESTINATIONS: Destination[] = [
       'Bustling Thamel streets & artisan workshops'
     ],
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)'],
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1600&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
       'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
       'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=1200'
     ],
     coordinates: { lat: 27.7172, lng: 85.3240 },
@@ -45,9 +45,10 @@ export const DESTINATIONS: Destination[] = [
       'International Mountain Museum'
     ],
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)'],
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80&w=1600&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200',
+      'https://images.unsplash.com/photo-1597212618440-806262de4f6b?q=80&w=1200',
+      'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1200',
       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200'
     ],
     coordinates: { lat: 28.2096, lng: 83.9856 },
@@ -99,7 +100,8 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)'],
     image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200'
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200',
+      'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200'
     ],
     coordinates: { lat: 28.5355, lng: 83.8780 },
     unesco: false,
@@ -122,8 +124,9 @@ export const DESTINATIONS: Destination[] = [
       'Tiji Festival masked dance celebrations'
     ],
     bestSeason: ['Spring (Mar–May)', 'Summer/Monsoon (Jun–Sep)', 'Autumn (Oct–Nov)'],
-    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1600&auto=format&fit=crop',
     gallery: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200',
       'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=1200'
     ],
     coordinates: { lat: 29.1813, lng: 83.9575 },
@@ -147,8 +150,9 @@ export const DESTINATIONS: Destination[] = [
       'Elephant Breeding Center & conservation awareness'
     ],
     bestSeason: ['Winter (Oct–Mar) — Best wildlife visibility'],
-    image: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=1600&auto=format&fit=crop',
     gallery: [
+      'https://images.unsplash.com/photo-1549366021-9f761d450615?q=80&w=1200',
       'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?q=80&w=1200'
     ],
     coordinates: { lat: 27.5341, lng: 84.4525 },
@@ -174,7 +178,8 @@ export const DESTINATIONS: Destination[] = [
     bestSeason: ['Autumn (Oct–Nov)', 'Winter (Dec–Feb)'],
     image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop',
     gallery: [
-      'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1200'
+      'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1200',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200'
     ],
     coordinates: { lat: 27.4712, lng: 83.2755 },
     unesco: true,
@@ -197,8 +202,11 @@ export const DESTINATIONS: Destination[] = [
       'Experiencing authentic Western Nepalese mountain villages'
     ],
     bestSeason: ['Spring (Apr–May)', 'Autumn (Sep–Nov)'],
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1600&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200'
+    ],
     coordinates: { lat: 29.5375, lng: 82.0833 },
     unesco: false,
     category: 'nature'
@@ -220,8 +228,11 @@ export const DESTINATIONS: Destination[] = [
       'Unique eastern Kirat culture & Chandi dance'
     ],
     bestSeason: ['Spring (Mar–May)', 'Autumn (Oct–Dec)'],
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1600&auto=format&fit=crop',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1600&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1200',
+      'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200'
+    ],
     coordinates: { lat: 26.9103, lng: 87.9272 },
     unesco: false,
     category: 'nature'
@@ -243,8 +254,11 @@ export const DESTINATIONS: Destination[] = [
       'Authentic Newari hospitality and traditional dining'
     ],
     bestSeason: ['Autumn (Sep–Nov)', 'Spring (Mar–May)', 'Winter (Dec–Feb)'],
-    image: 'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1600&auto=format&fit=crop',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1600&auto=format&fit=crop',
+    gallery: [
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200',
+      'https://images.unsplash.com/photo-1588590484083-d5658763574c?q=80&w=1200'
+    ],
     coordinates: { lat: 27.9392, lng: 84.4172 },
     unesco: false,
     category: 'cultural'

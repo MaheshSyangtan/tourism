@@ -14,7 +14,7 @@ export const FactSheetSection: React.FC = () => {
           {/* Left Column — Editorial Heading */}
           <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D98A2B]">
-              <span className="w-8 h-[2px] bg-[#D98A2B]"></span>
+              <span className="w-8 h-0.5 bg-[#D98A2B]"></span>
               <span>Introduction</span>
             </div>
 
@@ -80,9 +80,9 @@ export const FactSheetSection: React.FC = () => {
                   src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop"
                   alt="Kathmandu Durbar Square Temple Architecture"
                   loading="lazy"
-                  className="w-full h-[450px] object-cover"
+                  className="w-full h-112.5 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#070C14] via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#070C14]/80 backdrop-blur-md border border-slate-700/60">
                   <span className="text-xs font-bold text-[#D98A2B] uppercase tracking-wider">Kathmandu Valley</span>
                   <h3 className="font-cinzel text-lg text-white font-bold">Living Pagoda Architecture</h3>

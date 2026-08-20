@@ -51,7 +51,7 @@ export const DestinationGallery: React.FC = () => {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeCategory === cat.id
-                  ? 'bg-gradient-to-r from-[#B83227] to-[#D98A2B] text-white shadow-lg shadow-[#B83227]/20 scale-105'
+                  ? 'bg-linear-to-r from-[#B83227] to-[#D98A2B] text-white shadow-lg shadow-[#B83227]/20 scale-105'
                   : 'bg-[#070C14] text-slate-400 border border-slate-800 hover:border-slate-600 hover:text-white'
               }`}
             >
@@ -75,7 +75,7 @@ export const DestinationGallery: React.FC = () => {
               role="button"
               tabIndex={0}
               aria-label={`Explore ${dest.name}`}
-              className="group relative rounded-3xl overflow-hidden bg-[#070C14] border border-[#D8C3A5]/15 hover:border-[#D98A2B]/60 transition-all duration-700 cursor-pointer flex flex-col justify-between h-[480px] shadow-xl hover:shadow-2xl hover:shadow-[#B83227]/20 focus-visible:outline-2 focus-visible:outline-[#D98A2B]"
+              className="group relative rounded-3xl overflow-hidden bg-[#070C14] border border-[#D8C3A5]/15 hover:border-[#D98A2B]/60 transition-all duration-700 cursor-pointer flex flex-col justify-between h-120 shadow-xl hover:shadow-2xl hover:shadow-[#B83227]/20 focus-visible:outline-2 focus-visible:outline-[#D98A2B]"
             >
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
@@ -85,7 +85,7 @@ export const DestinationGallery: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/50 to-black/30 group-hover:via-[#070C14]/70 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#070C14] via-[#070C14]/50 to-black/30 group-hover:via-[#070C14]/70 transition-all duration-500"></div>
               </div>
 
               {/* Top Card Badge */}
@@ -143,7 +143,7 @@ export const DestinationGallery: React.FC = () => {
                 alt={selectedDestination.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-[#070C14] via-[#070C14]/40 to-transparent"></div>
               
               <button
                 onClick={() => setSelectedDestination(null)}

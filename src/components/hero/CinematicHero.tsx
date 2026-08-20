@@ -17,7 +17,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onOpenPlanner }) =
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
         />
         {/* Dark Editorial Vignette & Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/60 to-[#070C14]/40"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-[#070C14] via-[#070C14]/60 to-[#070C14]/40"></div>
         <div className="absolute inset-0 bg-radial from-transparent via-[#070C14]/30 to-[#070C14]/90"></div>
       </div>
 

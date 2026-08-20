@@ -72,13 +72,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? 'py-3 bg-[#070C14]/90 backdrop-blur-md border-b border-[#D8C3A5]/15 shadow-2xl shadow-black/50'
-          : 'py-6 bg-gradient-to-b from-[#070C14]/80 to-transparent'
+          : 'py-6 bg-linear-to-b from-[#070C14]/80 to-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="group flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#B83227] via-[#D98A2B] to-[#1A365D] p-[1.5px] transition-transform duration-500 group-hover:rotate-45">
+          <div className="w-10 h-10 rounded-full bg-linear-to-tr from-[#B83227] via-[#D98A2B] to-[#1A365D] p-[1.5px] transition-transform duration-500 group-hover:rotate-45">
             <div className="w-full h-full bg-[#070C14] rounded-full flex items-center justify-center">
               <span className="font-cinzel text-lg text-[#D8C3A5] font-bold">🇳🇵</span>
             </div>
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
             <a
               key={link.label}
               href={link.href}
-              className="text-xs uppercase tracking-widest font-medium text-slate-300 hover:text-[#D98A2B] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#B83227] hover:after:w-full after:transition-all"
+              className="text-xs uppercase tracking-widest font-medium text-slate-300 hover:text-[#D98A2B] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#B83227] hover:after:w-full after:transition-all"
             >
               {link.label}
             </a>
@@ -128,9 +128,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
 
           <button
             onClick={onOpenPlanner}
-            className="relative group overflow-hidden rounded-full p-[1px] font-semibold text-xs tracking-wider uppercase focus:outline-none"
+            className="relative group overflow-hidden rounded-full p-px font-semibold text-xs tracking-wider uppercase focus:outline-none"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-[#B83227] via-[#D98A2B] to-[#1A365D] group-hover:opacity-90 transition-opacity"></span>
+            <span className="absolute inset-0 bg-linear-to-r from-[#B83227] via-[#D98A2B] to-[#1A365D] group-hover:opacity-90 transition-opacity"></span>
             <span className="relative px-5 py-2.5 rounded-full bg-[#070C14] flex items-center gap-2 text-white group-hover:bg-transparent transition-colors">
               <Sparkles className="w-3.5 h-3.5 text-[#D98A2B]" />
               Plan Journey
@@ -184,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlanner }) => {
                   setMobileMenuOpen(false);
                   onOpenPlanner();
                 }}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#B83227] to-[#D98A2B] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl bg-linear-to-r from-[#B83227] to-[#D98A2B] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
                 Build Custom Itinerary

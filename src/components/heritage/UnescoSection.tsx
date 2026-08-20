@@ -67,7 +67,7 @@ export const UnescoSection: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F192C] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#0F192C] via-transparent to-transparent"></div>
                 
                 {/* UNESCO Tag */}
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#070C14]/90 backdrop-blur-md border border-amber-500/40 text-[10px] font-bold uppercase tracking-widest text-[#D98A2B] flex items-center gap-1.5">
@@ -124,7 +124,7 @@ export const UnescoSection: React.FC = () => {
                 alt={selectedSite.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#070C14] via-[#070C14]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-[#070C14] via-[#070C14]/40 to-transparent"></div>
               
               <button
                 onClick={() => setSelectedSite(null)}
